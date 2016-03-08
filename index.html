@@ -4,6 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>What's My Rate?</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -32,91 +33,102 @@
   </div><!-- end header row -->
 
 <div class="row">
-    <div class="col-xs-6">
-    <!-- <div class="center-block"> -->
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0">
        <div class="panel panel-success">
             <div class="panel-heading">RATE/HOUR</div>
                <div class="panel-body">  
                  <span class="rate" id="required_rate">$0</span>
                </div>
-       </div> 
-    <!-- </div> -->
+       </div>
    </div> <!-- end column -->
 
-       <div class="col-xs-6">
-    <!-- <div class="center-block"> -->
+   <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0">
        <div class="panel panel-success">
             <div class="panel-heading">BILLABLE HOURS</div>
                <div class="panel-body">  
                  <span class="rate" id="billable">0</span>
                </div>
        </div> 
-    <!-- </div> -->
    </div> <!-- end column -->
 </div> <!-- end row -->
 
   <div class="row"> 
-    <div class="col-xs-6">
-         <form role="form" id="whatsmyrate">
+      <div class="col-md-6 col-md-offset-0">
 
-            <div class="form-group">
-                <label for="targetsalary">Target salary (yearly)</label>
-                    <div class="input-group medium">
-                      <span class="input-group-addon">$</span>
-                      <input type="text" class="form-control"  id="target_salary" name="targetsalary" onchange="calculate();">
-                    </div>
-            </div>
-
-            <div class="form-group">
-              <label for="overhead">Overhead ($)</label>
-                 <div class="input-group medium">
-              <span class="input-group-addon">$</span>
-              <input type="text" class="form-control"  id="overhead" name="overhead" onchange="calculate();">
+        <div class="row">
+           <form role="form" id="whatsmyrate">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="targetsalary">Target salary (yearly)</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control input-lg"  id="target_salary" name="targetsalary" onchange="calculate();">
+                      </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="timeoff">Time off (hours/year)</label>
-                <div class="input-group narrow">
-                  <input type="text" class="form-control"   id="timeoff" name="timeoff" onchange="calculate();">
-                  <span class="input-group-addon">hrs</span>
-                </div>      
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="overhead">Overhead ($)</label>
+                   <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control input-lg"  id="overhead" name="overhead" onchange="calculate();">
+                </div>
+              </div>
             </div>
+        </div>
 
-            <div class="form-group">
-              <label for="associatedcosts">Associated costs (%)</label>
-                <div class="input-group narrow">
-              <input type="text" class="form-control"  id="associated_costs" name="associatedcosts" onchange="calculate();">
-              <span class="input-group-addon">%</span>
-                </div>  
+         <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="timeoff">Time off (hours/year)</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control input-lg"   id="timeoff" name="timeoff" onchange="calculate();">
+                    <span class="input-group-addon">hrs</span>
+                  </div>      
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="associatedcosts">Associated costs (%)</label>
+                  <div class="input-group">
+                <input type="text" class="form-control input-lg"  id="associated_costs" name="associatedcosts" onchange="calculate();">
+                <span class="input-group-addon">%</span>
+                  </div>  
+              </div>
+            </div>
+        </div>
 
-            <div class="form-group">
-              <label for="nonbillable">Non-billable time (%)</label>
-                 <div class="input-group narrow">
-              <input type="text" class="form-control" id="nonbillable" name="nonbillable" onchange="calculate();">
-              <span class="input-group-addon">%</span>
+         <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nonbillable">Non-billable time (%)</label>
+                   <div class="input-group">
+                <input type="text" class="form-control input-lg" id="nonbillable" name="nonbillable" onchange="calculate();">
+                <span class="input-group-addon">%</span>
+                </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="profit">Desired profit (%)</label>
-                 <div class="input-group narrow">
-              <input type="text" class="form-control"  id="profit" name="profit" onchange="calculate();">
-                <span class="input-group-addon">%</span> 
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="profit">Desired profit (%)</label>
+                   <div class="input-group">
+                 <input type="text" class="form-control input-lg"  id="profit" name="profit" onchange="calculate();">
+                  <span class="input-group-addon">%</span> 
+                </div>
               </div>
             </div>
+        </div>
+                  <button type="reset" class="btn btn-default btn-lg">
 
-                <button type="reset" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-refresh"></span> Clear Entries
 
-                  <span class="glyphicon glyphicon-refresh"></span> Clear Entries
+                  </button>
+            </form>  <!--end form-->
+      </div> <!--end column -->
 
-                </button>
-          </form>  <!--end form-->
-    </div> <!--end col-md.4 -->
-
-
-    <div class="col-xs-6">
+    <div class="col-md-6 col-md-offset-0">
        <div class="how-to-use">
         <h3>How it Works</h3> 
         <p><em>What's My Rate</em> helps you calculate a realistic, sustainable hourly rate for your web development or web design services. </p>
@@ -124,43 +136,43 @@
            </p> 
       </div>
 
-    <div class="description">
+        <div class="description">
 
-      <div class="desc-salary">
-        <h3>Target salary</h3> 
-        <p>The yearly gross salary you want. Remember: overhead, expenses and other costs are deducted from this.</p>
-      </div>
+          <div class="desc-salary">
+            <h3>Target salary</h3> 
+            <p>The yearly gross salary you want. Remember: overhead, expenses and other costs are deducted from this.</p>
+          </div>
 
-      <div class="desc-costs">
-        <h3>Associated costs</h3>
-       <p>(25-30% suggested)</p>
-        <p>Taxes, insurance, etc. </p>
-        </div>
+          <div class="desc-costs">
+            <h3>Associated costs</h3>
+           <p>(25-30% suggested)</p>
+            <p>Taxes, insurance, etc. </p>
+          </div>
 
-      <div class="desc-timeoff">
-        <h3>Time off</h3>
-        <p>(176 hours suggested)</p>
-        <p>Holidays, vacation, sick days.</p>
-        </div>
+          <div class="desc-timeoff">
+            <h3>Time off</h3>
+            <p>(176 hours suggested)</p>
+            <p>Holidays, vacation, sick days.</p>
+          </div>
 
-      <div class="desc-nonbillable">
-        <h3>Non-billable time</h3>
-        <p>(25% suggested)</p>
-        <p>Time when you're doing invoicing, marketing, sales, etc. Business-related work, but not "time off".</p>
-        </div>
+          <div class="desc-nonbillable">
+            <h3>Non-billable time</h3>
+            <p>(25% suggested)</p>
+            <p>Time when you're doing invoicing, marketing, sales, etc. Business-related work, but not "time off".</p>
+          </div>
 
-      <div class="desc-overhead">
-        <h3>Overhead</h3>
-        <p>Rent, utilities, supplies, web hosting, etc.</p>
-        </div>
+          <div class="desc-overhead">
+            <h3>Overhead</h3>
+            <p>Rent, utilities, supplies, web hosting, etc.</p>
+          </div>
 
-      <div class="desc-profit">
-        <h3>Desired profit</h3>
-        <p>(10% or more suggested)</p>
-        <p>Minimum percent profit you want, over salary. For example, for a $50,000 salary, you might want a 10% ($5,000) profit margin.</p>
-        </div>
+          <div class="desc-profit">
+            <h3>Desired profit</h3>
+            <p>(10% or more suggested)</p>
+            <p>Minimum percent profit you want, over salary. For example, for a $50,000 salary, you might want a 10% ($5,000) profit margin.</p>
+          </div>
 
-    </div>
+        </div> <!-- end description panels -->
 
     </div> <!-- end description column -->
 </div> <!-- end row -->
